@@ -27,18 +27,16 @@ class ProductsService {
     const createdProduct = await this.productsRepository.create(productData);
     return { success: true, createdProduct };
   }
-
-  async getProductById(productId) {
-    const product = await this.productsRepository.findById(productId);
-    return product;
-  }
-
   async getProducts() {
     const products = await this.productsRepository.findAll();
     if (!products) {
       return { success: false, message: "No products found" };
     }
     return { success: true, products };
+  }
+  async getProductById(productId) {
+    const product = await this.productsRepository.findByIdgetProductsById(productId);
+    return product;
   }
 
   async createOrder(products, username) {

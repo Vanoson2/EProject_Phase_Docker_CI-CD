@@ -68,10 +68,10 @@ npm run test:all      # Test both services
 ### Docker Images
 All services are containerized and pushed to Docker Hub:
 ```bash
-3002tad/eproject-auth:latest
-3002tad/eproject-product:latest
-3002tad/eproject-order:latest
-3002tad/eproject-api-gateway:latest
+vanoson2/eproject-auth:latest
+vanoson2/eproject-product:latest
+vanoson2/eproject-order:latest
+vanoson2/eproject-api-gateway:latest
 ```
 
 ### Optimized Dockerfiles
@@ -91,7 +91,7 @@ CMD ["npm", "start"]
 docker-compose up --build
 
 # Or run individual services
-docker run -p 3000:3000 3002tad/eproject-auth:latest
+docker run -p 3000:3000 vanoson2/eproject-auth:latest
 ```
 
 ## ⚙️ CI/CD Pipeline
@@ -109,9 +109,9 @@ Push/PR → test-auth & test-product (parallel) → build-and-push (matrix) → 
 
 ### Required GitHub Secrets
 ```bash
-JWT_SECRET=your-super-secret-jwt-key-2024
+JWT_SECRET=your-secret-key
 LOGIN_TEST_USER=testuser
-LOGIN_TEST_PASSWORD=password123
+LOGIN_TEST_PASSWORD=testpassword
 DOCKER_PASSWORD=your-docker-hub-access-token
 ```
 
@@ -171,5 +171,4 @@ Docker_Test_V4/
 ---
 
 
-
-**Made with ❤️ by [vanoson2](https://github.com/Vanoson2/ThaiVanSon_22665311_EProject_Phase)**
+**Made with ❤️ by [vanoson2](https://github.com/Vanoson2/EProject_Phase_Docker_CI-CD)**
