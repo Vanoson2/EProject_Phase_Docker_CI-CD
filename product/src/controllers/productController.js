@@ -70,7 +70,7 @@ class ProductController {
   async getOrderById(req, res) {
     const { id } = req.params;
     console.log("Fetching order with ID:", id);
-    const ORDER_SERVICE_URL = process.env.ORDER_SERVICE_URL || 'http://localhost:3002';
+    const ORDER_SERVICE_URL = process.env.ORDER_SERVICE_URL;
     const response = await axios.get(`${ORDER_SERVICE_URL}/${id}`,{ headers: { Authorization: req.headers.authorization } });
     const order = response.data;
     if(!order){

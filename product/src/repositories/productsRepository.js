@@ -16,7 +16,7 @@ class ProductsRepository {
   async findByIds(ids) {
     console.log("Finding products with IDs:", ids);
     const products = await Product.find({ _id: { $in: ids } }).lean();
-    return products; // ✅ Đảm bảo return array
+    return products; //  Đảm bảo return array
   }
 
   async findAll() {
