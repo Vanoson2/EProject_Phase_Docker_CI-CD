@@ -91,14 +91,14 @@ class ProductController {
     }
   }
 
-  async getProductsById(req, res) {
+  async getProductById(req, res) {
     try {
       const { id } = req.params;
-      const products = await this.productService.getProductsById(id);
-      if (!products) {
+      const product = await this.productService.getProductById(id);
+      if (!product) {
         return res.status(404).json({ message: "Product not found" });
       }
-      res.status(200).json(products);
+      res.status(200).json(product);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Server error" });
