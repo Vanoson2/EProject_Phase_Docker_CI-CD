@@ -34,8 +34,8 @@ class ProductsService {
     }
     return { success: true, products };
   }
-  async getProductById(productId) {
-    const product = await this.productsRepository.findByIdgetProductsById(productId);
+  async getProductById(id) {
+    const product = await this.productsRepository.findByIdgetProductsById(id);
     return product;
   }
 
