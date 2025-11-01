@@ -15,7 +15,7 @@ class ProductsRepository {
   async findAll() {
     return await Product.find().lean(); // Sử dụng .lean() để trả về Plain Object
   }
-  async findByIdgetProductsById(productIds) {
+  async findByIds(productIds) {
     return await Product.find({ _id: { $in: productIds } }).lean();
   }
 }

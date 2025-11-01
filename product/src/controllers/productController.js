@@ -90,7 +90,19 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
-
+  async getProductById(req, res) {
+    const { id } = req.params;
+    try {
+      const products = await this.productService.getProducts(id);
+      if (!products) {
+        return res.status(404).json({ message: "Product not found" });
+      }
+      res.status(200).json(products);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server error" });
+    }
+  }
 }
 
 module.exports = ProductController;

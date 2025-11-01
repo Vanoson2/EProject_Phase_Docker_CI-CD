@@ -35,7 +35,7 @@ class ProductsService {
     return { success: true, products };
   }
   async getProductById(id) {
-    const product = await this.productsRepository.findByIdgetProductsById(id);
+    const product = await this.productsRepository.findById(id);
     return product;
   }
 
