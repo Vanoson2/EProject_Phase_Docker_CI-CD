@@ -112,6 +112,7 @@ Push/PR → test-auth & test-product (parallel) → build-and-push (matrix) → 
 JWT_SECRET=your-secret-key
 LOGIN_TEST_USER=testuser
 LOGIN_TEST_PASSWORD=testpassword
+DOCKER_USER = your-docker-hub-name
 DOCKER_PASSWORD=your-docker-hub-access-token
 ```
 
